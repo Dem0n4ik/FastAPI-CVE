@@ -6,14 +6,14 @@
 
 #### 1. **Імпорт бібліотек**
 - `FastAPI`, `Query`, `HTMLResponse` – для створення веб-API.
-- `StaticFiles`, `Jinja2Templates` – для роботи з статичними файлами та HTML-шаблонами.
+- `StaticFiles`, `Jinja2Templates` – для роботи з веб-інтерфейсом.
 - `Request` – для отримання інформації про запит.
 - `datetime`, `timedelta` – для роботи з датами.
-- `json` – для обробки JSON-файлу.
+- `json` – для роботи із JSON-форматом.
 
 #### 2. **Ініціалізація програми**
 - `app = FastAPI()` – створює FastAPI-додаток.
-- `app.mount("/static", StaticFiles(directory="static"), name="static")` – підключає папку `static` для роботи зі статичними файлами (наприклад, CSS, зображення).
+- `app.mount("/static", StaticFiles(directory="static"), name="static")` – підключає папку `static` для роботи зі статичними файлами (у нашому випадку, CSS).
 - `templates = Jinja2Templates(directory="templates")` – підключає папку `templates` для HTML-шаблонів.
 
 #### 3. **Файл даних**
@@ -53,7 +53,7 @@
 4. **Нові вразливості**  
    - `@app.get("/get/new")`:  
      - Завантажує дані з файлу.  
-     - Сортує їх за датою додавання в порядку спадання.  
+     - Сортує їх за датою додавання.  
      - Виводить перші 10 нових вразливостей через шаблон `new.html`.
 
 5. **Відомі програми-вимагачі**  
