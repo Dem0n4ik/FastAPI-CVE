@@ -21,7 +21,7 @@ def filter_date(cve_data, days, max_items):
     cut_date = datetime.now() - timedelta(days=days)
     filtered = [
         item for item in cve_data
-        if datetime.strptime(item.get("dateAdded", ""), "%Y-%m-%d") >= cutoff_date
+        if datetime.strptime(item.get("dateAdded", ""), "%Y-%m-%d") >= cut_date
     ][:max_items]
     return filtered
 
@@ -51,7 +51,7 @@ async def info(request: Request):
 @app.get("/get/all", response_class=HTMLResponse)
 async def get_all(request: Request):
     data = load_data()["vulnerabilities"]
-    filtered = filter_by_date(data, days=5, max_items=40)
+    filtered = filter_date(data, days=5, max_items=40)
     return templates.TemplateResponse("all.html", {"request": request, "cves": filtered})
 
 @app.get("/get/new", response_class=HTMLResponse)
@@ -63,7 +63,7 @@ async def get_new(request: Request):
 @app.get("/get/known", response_class=HTMLResponse)
 async def get_known(request: Request):
     data = load_data()["vulnerabilities"]
-    filtered = filter_known_ransomware(data, max_items=10)
+    filtered = filter_known(data, max_items=10)
     return templates.TemplateResponse("known.html", {"request": request, "cves": filtered})
 
 @app.get("/get", response_class=HTMLResponse)
@@ -71,5 +71,5 @@ async def search_page(request: Request, query: str = None):
     cves = []
     if query:
         data = load_data()["vulnerabilities"]
-        cves = filter_by_keyword(data, keyword=query, max_items=40)
+        cves = filter_keyword(data, keyword=query, max_items=40)
     return templates.TemplateResponse("search.html", {"request": request, "cves": cves})
