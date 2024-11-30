@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVEs Known Ransomware</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>CVEs Known Ransomware</h1>
+    </header>
+    <main>
+        {% if cves %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>CVE ID</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Date Added</th>
+                        <th>Known Ransomware</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cve in cves %}
+                        <tr>
+                            <td>{{ cve.cveID }}</td>
+                            <td>{{ cve.vendorProject }} {{ cve.product }}</td>
+                            <td>{{ cve.shortDescription }}</td>
+                            <td>{{ cve.dateAdded }}</td>
+                            <td>{{ cve.knownRansomwareCampaignUse }}</td>>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No known CVEs at the moment.</p>
+        {% endif %}
+        <a href="/">Back</a>
+    </main>
+</body>
+</html>

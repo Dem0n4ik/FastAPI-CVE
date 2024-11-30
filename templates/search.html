@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for keyword</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Search for keyword</h1>
+    </header>
+    <main>
+        <form action="/get" method="get">
+            <input type="text" name="query" placeholder="Key word" required>
+            <button type="submit">Search</button>
+        </form>
+        {% if cves %}
+            <h2>Results search:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>CVE ID</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Date Added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cve in cves %}
+                        <tr>
+                            <td>{{ cve.cveID }}</td>
+                            <td>{{ cve.vendorProject }} {{ cve.product }}</td>
+                            <td>{{ cve.shortDescription }}</td>
+                            <td>{{ cve.dateAdded }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Not found.</p>
+        {% endif %}
+        <a href="/">Back</a>
+    </main>
+</body>
+</html>
