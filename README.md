@@ -95,5 +95,48 @@
 
 
 
-![image](https://github.com/user-attachments/assets/d9c2d97b-5289-4f4a-93f8-1fdf12a72c12)
+# Результати
 
+```bash
+   /
+``` 
+
+![{9DC60E2B-53A9-4422-A795-BC73C009AB39}](https://github.com/user-attachments/assets/191c4d01-81fa-4e06-b011-171fee74fdd8)
+
+
+```bash
+   /info
+``` 
+
+![{1396A51C-869F-4222-A163-12E4E2C58608}](https://github.com/user-attachments/assets/c88ef91f-2e13-4eb2-be35-531c5c4e0159)
+
+
+```bash
+   /get/all
+``` 
+
+![{D4BAF74B-4384-4FC3-8BFE-AF4C71BE92D8}](https://github.com/user-attachments/assets/d50374f6-52a2-450a-83e6-f9c2bd165f2d)
+
+
+
+```bash
+   /get/new
+``` 
+
+![{73C98025-07D7-4B65-B53F-B86C030A49C4}](https://github.com/user-attachments/assets/90211395-d126-41fa-b9d8-ae37e4dc0371)
+
+
+
+```bash
+   /get
+``` 
+
+![{53406544-773C-465F-9FC5-216F71DE5667}](https://github.com/user-attachments/assets/81b9cdca-8b89-4edb-af63-a32fde3052fc)
+
+
+
+```bash
+   /get
+``` 
+
+![{B633D012-F830-4FDC-8F47-324F4F807764}](https://github.com/user-attachments/assets/8b13a7e3-1874-4b00-b2c7-72b68ede8c3d)
