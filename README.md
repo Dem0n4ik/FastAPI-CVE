@@ -128,7 +128,7 @@
 
 
 ```bash
-   /get
+   /get/know
 ``` 
 
 ![{53406544-773C-465F-9FC5-216F71DE5667}](https://github.com/user-attachments/assets/81b9cdca-8b89-4edb-af63-a32fde3052fc)
